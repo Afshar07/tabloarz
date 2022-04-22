@@ -26,7 +26,9 @@
           />
         </label>
       </div>
-      <button type="btn" class="btn btn-primary mx-auto">ورود</button>
+      <button type="btn" class="btn btn-primary mx-auto" @click="sendLoginReq">
+        ورود
+      </button>
     </div>
   </div>
 </template>
@@ -42,9 +44,10 @@ export default {
   methods: {
     async sendLoginReq() {
       try {
-        const response = await this.$repositories.submitLogin.submitLogin(
-          payload
-        );
+        const response = await this.$repositories.submitLogin.submitLogin({
+          username: this.username,
+          password: this.password,
+        });
         console.log(response);
       } catch (error) {
         console.log(error);

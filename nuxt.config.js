@@ -18,7 +18,7 @@ export default {
   css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ["~/plugins/repository.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -27,10 +27,10 @@ export default {
   buildModules: ["@nuxt/postcss8"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["@nuxtjs/axios"],
   axios: {
     credentials: true,
-    baseURL: "localhost",
+    baseURL: "localhost:8000",
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

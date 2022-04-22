@@ -45,7 +45,7 @@ export default {
         const response = await this.$repositories.submitLogin.submitLogin(
           payload
         );
-        return response;
+        console.log(response);
       } catch (error) {
         console.log(error);
       }
